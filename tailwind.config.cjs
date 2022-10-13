@@ -13,6 +13,9 @@ module.exports = {
 
       'ciano-500': '#81D8F7',
       'ciano-300': '#98E1FB',
+
+      'black': '#000',
+      'white': '#fff'
     },
     fontSize: {
       'xs': 14,
