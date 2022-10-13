@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Envelope } from 'phosphor-react'
-import { TextInput, InputProps, InputRootProps } from './index'
+import { TextInput, InputRootProps } from './index'
 
 export default {
   title: 'Components/Input',
