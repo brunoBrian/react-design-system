@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react'
+import axios from 'axios'
 
 import ReactLogo from '../assets/react-logo.svg'
 import { Checkbox } from '@radix-ui/react-checkbox'
@@ -12,9 +13,14 @@ export function SignIn() {
     const [isUserSignIn, setIsUserSignIn] = useState(false)
 
     function handleSignIn(e: FormEvent) {
-        e.preventDefault()
+      e.preventDefault()
 
-        setIsUserSignIn(true)
+      axios.post('/session', {
+        email: 'bruno@teste.com',
+        password: '12345678'
+      })
+
+      setIsUserSignIn(true)
     }
 
   return (
@@ -22,7 +28,7 @@ export function SignIn() {
       <div className='w-[100%] sm:w-[400px] px-4 sm:px-0'>
         <header className='flex justify-center items-center flex-col mb-8'>
           <img src={ReactLogo} alt="Logo react" className='mb-4' />
-          <Heading size='lg'><h1 className='text-gray-100'>Ignite Lab</h1></Heading>
+          <Heading size='lg' asChild><h1 className='text-gray-100'>Ignite Lab</h1></Heading>
           <Heading size='md' className='text-gray-400 font-normal'>Faça login e comece a usar</Heading>
         </header>
 
